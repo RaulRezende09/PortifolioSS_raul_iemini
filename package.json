@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-raul-iemini",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio interativo de Raul Rezende Iemini Aguiar com temática espacial",
+  "scripts": {
+    "build:js": "esbuild src/main.jsx --bundle --minify --format=iife --target=es2019 --jsx=automatic --define:process.env.NODE_ENV=\\\"production\\\" --outfile=public/assets/app.js",
+    "build:css": "tailwindcss -i src/styles.css -o public/assets/styles.css --minify",
+    "build": "npm run build:js && npm run build:css",
+    "dev": "npm run build && npx serve public"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "esbuild": "^0.25.0",
+    "tailwindcss": "^4.1.0"
+  }
+}

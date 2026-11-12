@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: portfolio-raul-iemini
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./public
+    headers:
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=86400
